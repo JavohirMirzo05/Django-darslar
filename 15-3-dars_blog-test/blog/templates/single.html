@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Post Detail{% endblock %}
+
+{% block content %}
+<div class="p-5">
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <img src="{{ post.image.url }}" width="25%" alt="">
+            <h1 class="display-5 fw-bold">{{ post.title }}</h1>
+            <p class="col-md-8 fs-4">{{ post.text }}</p>
+            <span>
+                <em>Author: {{ post.author|title }}</em>
+            </span>
+            <span class="ms-5">Time: {{ post.created_at|timesince|title }}</span>
+        </div>
+    </div>
+</div>
+{% endblock %}
